@@ -15,8 +15,8 @@
 ## API endpoints
 - GET: http://localhost:8000/api/v1/watches/
 - POST: http://localhost:8000/api/v1/watches/
-- PUT: http://localhost:8000/api/v1/watches/<ID>/
-- DELETE: http://localhost:8000/api/v1/watches/<ID>/
+- PUT: http://localhost:8000/api/v1/watches/ID/
+- DELETE: http://localhost:8000/api/v1/watches/ID/
 
 ## Tools
 - You can use any tool you want to make requests on the API. Such as: insomnia, postman, requests...
