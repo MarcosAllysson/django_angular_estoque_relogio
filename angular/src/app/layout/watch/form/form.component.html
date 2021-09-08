@@ -1,0 +1,7 @@
+<form class="form-group">
+    <input type="text" class="form-control" [(ngModel)]='watch.title' name='title'>
+    <input type="text" class="form-control" [(ngModel)]='watch.price' name='price'>
+    <input type="number" class="form-control" [(ngModel)]='watch.quantity' name='quantity'>
+    <button class="btn btn-primary" *ngIf='!editMode' (click)='adicionarWatch(watch)'>Salvar</button>
+    <button class="btn btn-primary" *ngIf='editMode' (click)='editarWatch(watch.id,watch)'>Salvar</button>
+</form>
