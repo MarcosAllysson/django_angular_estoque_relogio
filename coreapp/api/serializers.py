@@ -12,5 +12,6 @@ class WatchSerializer(serializers.ModelSerializer):
             'id',
             'title',
             'quantity',
-            'price'
+            'price',
+            'photo'
         )

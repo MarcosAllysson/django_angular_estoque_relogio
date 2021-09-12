@@ -1,4 +1,4 @@
-from coreapp.views import WatchViewSet
+from coreapp.api.viewsets import WatchViewSet
 from rest_framework.routers import SimpleRouter
 
 
