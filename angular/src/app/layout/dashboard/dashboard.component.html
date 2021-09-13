@@ -3,8 +3,7 @@
         <div class="col-md-12">
             <ngb-carousel>
                 <ng-template *ngFor="let slider of sliders" ngbSlide>
-                    <img [src]="slider.photo" alt="Random first slide" class="img-fluid mx-auto d-block"
-                        width="100%"  />
+                    <img [src]="slider.photo" alt="Random first slide" class="img-fluid mx-auto d-block" width="100%" />
                     <div class="carousel-caption text-gold">
                         <h3>{{ slider.title }}</h3>
                         <p>{{ slider.price | currency: "BRL"}}</p>
@@ -13,15 +12,25 @@
             </ngb-carousel>
         </div>
     </div>
-    <hr />    
+    <hr />
     <div class='row'>
-    <div class='card container p-4 col-6' *ngFor='let watch of watchs'>
-        <div class='card-header'>{{watch.title}}</div>
-        <div class='card-body'>
-            <img class='img-fluid' src='{{watch.photo}}' />
-            {{"Quantity" |translate}} - {{watch.quantity}}x
+        <div class='card container p-4 col-6' *ngFor='let watch of watchs'>
+            <div class='card-header'>{{watch.title}}</div>
+            <div class='card-body'>
+                <img class='img-fluid' src='{{watch.photo}}' />
+                {{"Quantity" |translate}} - {{watch.quantity}}x
+            </div>
+            <div class='card-footer'>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        {{ watch.price | currency: "BRL"}}
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="btn btn-outline-danger fa fa-trash m-1" (click)='excluirWatch(watch.id)'></div>
+                        <div class="btn btn-outline-primary fa fa-edit m-1" (click)='editarWatch(watch)'></div>
+                    </div>
+                </div> 
+            </div>
         </div>
-        <div class='card-footer'> {{ watch.price | currency: "BRL"}}</div>
-    </div>
     </div>
 </div>

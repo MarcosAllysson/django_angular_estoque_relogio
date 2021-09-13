@@ -7,8 +7,9 @@
     <label for="">{{"Quantity" | translate}}</label>
     <input type="number" class="form-control" [(ngModel)]='watch.quantity' name='quantity'>
     <label for="">{{"Photo" | translate}}</label>
-    <input type="number" class="form-control" [(ngModel)]='watch.photo' name='quantity'>
-    <button class="btn btn-primary" *ngIf='!editMode' (click)='adicionarWatch(watch)'>{{"Save" | translate}}</button>
-    <button class="btn btn-primary" *ngIf='editMode' (click)='editarWatch(watch.id,watch)'>{{"Save" | translate}}</button>
+    <input type="text" class="form-control" [(ngModel)]='watch.photo' name='photo'>
+    <button class="btn btn-secondary m-2 fa fa-arrow-left"  (click)='goBack()'>{{"Back" | translate}}</button>
+    <button class="btn btn-primary m-2" *ngIf='!editMode' (click)='adicionarWatch(watch)'>{{"Save" | translate}}</button>
+    <button class="btn btn-primary m-2" *ngIf='editMode' (click)='editarWatch(watch.id,watch)'>{{"Save" | translate}}</button>
 </form>
 </div>

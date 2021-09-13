@@ -31,11 +31,13 @@ export class DashboardComponent implements OnInit {
     }
 
     excluirWatch(id: number) {
-        this.watchService.deletarWatch(id).toPromise().then((res) => {
-            console.log(res);
-            this.ngOnInit();
+        if (window.confirm('Deseja confirmar a ação ?')) {
+            this.watchService.deletarWatch(id).toPromise().then((res) => {
+                console.log(res);
+                this.ngOnInit();
 
-        }).catch((err) => console.error(err))
+            }).catch((err) => console.error(err))
+        }
     }
 
     editarWatch(watch: Watch) {

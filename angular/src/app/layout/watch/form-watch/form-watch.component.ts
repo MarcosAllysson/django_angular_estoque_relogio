@@ -21,7 +21,7 @@ export class FormWatchComponent implements OnInit {
     price: '',
     quantity: 0,
     title: '',
-    photo:'',
+    photo: '',
   };
   constructor(private storageService: StorageService, private watchService: WatchsService, private router: Router) { }
 
@@ -34,6 +34,7 @@ export class FormWatchComponent implements OnInit {
     if (tmp !== null) {
       this.watch = tmp;
       this.editMode = true;
+      this.storageService.clearWatch();
     } else {
       this.storageService.clearWatch();
     }
@@ -50,5 +51,8 @@ export class FormWatchComponent implements OnInit {
       console.log(res);
       this.router.navigate([''])
     }).catch((err) => console.log(err))
+  }
+  goBack() {
+    this.router.navigate(['']);
   }
 }
