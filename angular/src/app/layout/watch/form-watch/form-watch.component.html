@@ -1,0 +1,14 @@
+<div [@routerTransition]>
+<form class="form-group p-2">
+    <label for="">{{"Title" | translate}}</label>
+    <input type="text" class="form-control" [(ngModel)]='watch.title' name='title'>
+    <label for="">{{"Price" | translate}}</label>
+    <input type="text" class="form-control" [(ngModel)]='watch.price' name='price'>
+    <label for="">{{"Quantity" | translate}}</label>
+    <input type="number" class="form-control" [(ngModel)]='watch.quantity' name='quantity'>
+    <label for="">{{"Photo" | translate}}</label>
+    <input type="number" class="form-control" [(ngModel)]='watch.photo' name='quantity'>
+    <button class="btn btn-primary" *ngIf='!editMode' (click)='adicionarWatch(watch)'>{{"Save" | translate}}</button>
+    <button class="btn btn-primary" *ngIf='editMode' (click)='editarWatch(watch.id,watch)'>{{"Save" | translate}}</button>
+</form>
+</div>

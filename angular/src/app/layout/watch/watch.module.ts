@@ -2,23 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { WatchRoutingModule } from './watch-routing.module';
-import { ListComponent } from './list/list.component';
-import { FormComponent } from './form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { FormWatchComponent } from './form-watch/form-watch.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { DetailWatchComponent } from './detail-watch/detail-watch.component';
 
 
 @NgModule({
   declarations: [
-    ListComponent,
-    FormComponent
+    FormWatchComponent,
+    DetailWatchComponent
   ],
   imports: [
     CommonModule,
     WatchRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
-  exports:[ListComponent]
 })
 export class WatchModule { }

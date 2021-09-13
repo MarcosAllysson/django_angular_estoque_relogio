@@ -3,4 +3,5 @@ export interface Watch {
     price: string;
     quantity: number;
     title: string;
+    photo:string;
 }

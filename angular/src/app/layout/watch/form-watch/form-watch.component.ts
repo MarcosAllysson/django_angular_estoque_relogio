@@ -1,21 +1,27 @@
-import { WatchsService } from './../../../shared/services/watchs.service';
-import { Router } from '@angular/router';
 import { Watch } from './../../../shared/models/watch';
+import { WatchsService } from './../../../shared/services/watchs.service';
 import { StorageService } from './../../../shared/services/storage.service';
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { routerTransition } from '../../../router.animations';
+
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  selector: 'app-form-watch',
+  templateUrl: './form-watch.component.html',
+  styleUrls: ['./form-watch.component.css'],
+  animations: [routerTransition()]
 })
-export class FormComponent implements OnInit {
+export class FormWatchComponent implements OnInit {
+
   public editMode: boolean;
   public watch: Watch = {
     id: null,
     price: '',
     quantity: 0,
-    title: ''
+    title: '',
+    photo:'',
   };
   constructor(private storageService: StorageService, private watchService: WatchsService, private router: Router) { }
 
