@@ -15,21 +15,21 @@ export class WatchsService {
 
   listarWatchs(): Observable<Watch[]> {
     const headers = new HttpHeaders().append('Authorization', environment.token);
-    return this.http.get<Watch[]>(`${API_URL}/watches/`, { headers });
+    return this.http.get<Watch[]>(`${API_URL}watches/`, { headers });
   }
 
   editarWatch(id: number, watch: Watch): Observable<Watch> {
     const headers = new HttpHeaders().append('Authorization', environment.token);
-    return this.http.put<Watch>(`${API_URL}/watches/${id}/`, watch, { headers });
+    return this.http.put<Watch>(`${API_URL}watches/${id}/`, watch, { headers });
   }
   
   deletarWatch(id: number): Observable<Watch> {
     const headers = new HttpHeaders().append('Authorization', environment.token);    
-    return this.http.delete<Watch>(`${API_URL}/watches/${id}/`, { headers });
+    return this.http.delete<Watch>(`${API_URL}watches/${id}/`, { headers });
   }
 
   adicionarWatch(watch: Watch): Observable<Watch> {
     const headers = new HttpHeaders().append('Authorization', environment.token);
-    return this.http.post<Watch>(`${API_URL}/watches/`, watch, { headers });
+    return this.http.post<Watch>(`${API_URL}watches/`, watch, { headers });
   }
 }
