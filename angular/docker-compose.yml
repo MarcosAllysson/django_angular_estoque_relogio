@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  ems:
+    image: django_angular_estoque_relogio
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8081:80
